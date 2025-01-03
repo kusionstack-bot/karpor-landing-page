@@ -24,10 +24,66 @@
     </nav>
 
     <header class="hero">
-        <div class="container">
-            <h1>Intelligence for Kubernetes</h1>
-            <p class="subtitle">Advanced Search, Insight and AI capabilities for your Kubernetes clusters across any clouds</p>
-            <div class="cta-group">
+        <div class="grid-overlay"></div>
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+        <div class="glow-orb"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <div class="glow-effect absolute inset-0"></div>
+            <h1 class="text-7xl lg:text-8xl font-extrabold mb-12">
+                <span class="animated-gradient inline-block relative" data-text="Intelligence for Kubernetes">
+                    Intelligence for Kubernetes
+                </span>
+            </h1>
+            <div class="subtitle-container">
+                <p class="text-2xl md:text-3xl text-blue-100 max-w-3xl mx-auto mb-8 typewriter">
+                    Advanced Search, Insight and AI capabilities for your Kubernetes clusters across any clouds
+                </p>
+            </div>
+            
+            <!-- Video Container -->
+            <div class="mb-16 flex justify-center items-center">
+                <div class="video-container">
+                    <!-- Browser-like header -->
+                    <div class="browser-header">
+                        <div class="flex space-x-1.5">
+                            <div class="w-2 h-2 rounded-full bg-red-500/70"></div>
+                            <div class="w-2 h-2 rounded-full bg-yellow-500/70"></div>
+                            <div class="w-2 h-2 rounded-full bg-green-500/70"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-wrapper">
+                        <video 
+                            autoplay
+                            muted
+                            loop>
+                            <source src="https://www.kusionstack.io/karpor/assets/overview/demo.mp4" type="video/mp4">
+                        </video>
+                        <!-- Video Controls -->
+                        <div class="video-controls">
+                            <button class="video-control play-pause">
+                                <svg class="w-3 h-3 text-white pause-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6"/>
+                                </svg>
+                                <svg class="w-3 h-3 text-white play-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                                </svg>
+                            </button>
+                            <button class="video-control mute-unmute">
+                                <svg class="w-3 h-3 text-white volume-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M12 8v8m3.536-11.536a8 8 0 010 14.142M9.364 5.364L12 8m-7.072 1.536a3 3 0 000 4.928l2.536-2.536m4.95-4.95l2.536-2.536"/>
+                                </svg>
+                                <svg class="w-3 h-3 text-white mute-icon hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15.414l4.242-4.242m0 0l4.242-4.242m-4.242 4.242L5.586 8.586m4.242 4.242l4.242 4.242"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-6">
                 <a href="https://kusionstack.io/karpor/getting-started/quick-start" class="primary-button">Quick Start</a>
                 <a href="https://github.com/KusionStack/karpor" class="secondary-button">View on GitHub</a>
             </div>
