@@ -30,14 +30,16 @@ export default function Hero() {
   };
 
   return (
-    <header className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 to-blue-700">
-      {/* Grid Overlay */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-50 transform perspective-500 rotate-x-60" />
+    <header className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 to-blue-700 overflow-hidden">
+      {/* Dynamic Grid */}
+      <div className="grid-overlay">
+        <div className="dynamic-grid h-full w-full" />
+      </div>
       
-      {/* Glow Orbs */}
-      <div className="absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full bg-blue-400/50 filter blur-[100px] mix-blend-screen animate-float-1" />
-      <div className="absolute top-[40%] right-[10%] w-[500px] h-[500px] rounded-full bg-violet-400/50 filter blur-[100px] mix-blend-screen animate-float-2" />
-      <div className="absolute bottom-[15%] left-[25%] w-[550px] h-[550px] rounded-full bg-green-400/40 filter blur-[100px] mix-blend-screen animate-float-3" />
+      {/* Glow Orbs with reduced opacity */}
+      <div className="absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full bg-blue-400/20 filter blur-[120px] mix-blend-screen animate-float-1" />
+      <div className="absolute top-[40%] right-[10%] w-[500px] h-[500px] rounded-full bg-violet-400/20 filter blur-[120px] mix-blend-screen animate-float-2" />
+      <div className="absolute bottom-[15%] left-[25%] w-[550px] h-[550px] rounded-full bg-green-400/15 filter blur-[120px] mix-blend-screen animate-float-3" />
 
       <div className="container relative z-10 mx-auto px-6 text-center py-12">
         <div className="space-y-12">
