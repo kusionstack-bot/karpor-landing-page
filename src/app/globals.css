@@ -334,3 +334,16 @@
 .nav-button:hover::before {
   transform: translate(-50%, -50%) scale(1);
 }
+
+@keyframes bounce-x {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+}
+
+.animate-bounce-x {
+  animation: bounce-x 1s ease-in-out infinite;
+}
