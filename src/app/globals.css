@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-blue: #2563eb;
+  --secondary-purple: #7c3aed;
+  --accent-green: #10b981;
+  --background-dark: #0f172a;
+  --text-light: #f8fafc;
+  --text-dark: #1e293b;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float-1 {
+  animation: float 25s infinite;
+}
+
+.animate-float-2 {
+  animation: float 30s infinite;
+}
+
+.animate-float-3 {
+  animation: float 35s infinite;
+}
+
+/* Gradient Text Animation */
+.animate-gradient-text {
+  background: linear-gradient(
+    to right,
+    #6ee7b7 20%, /* emerald-300 */
+    #60a5fa 40%, /* blue-400 */
+    #a78bfa 60%, /* violet-400 */
+    #6ee7b7 80% /* emerald-300 */
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 3s linear infinite;
+  display: inline-block;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Grid Pattern */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Typewriter effect */
+.typewriter-container {
+  display: inline-flex;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid #60a5fa;
+  white-space: nowrap;
+  letter-spacing: 0.03em;
+  animation: 
+    typing 4s steps(200, end) forwards,
+    blink-caret .75s step-end infinite;
+  display: inline-block;
+  width: 0;
+}
+
+@keyframes typing {
+  from { 
+    width: 0;
+  }
+  to { 
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #60a5fa }
+}
+
+/* Video Container */
+.video-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Browser Header */
+.browser-header {
+  background-color: rgba(31, 41, 55, 0.95);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Feature Cards */
+.feature-card {
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
