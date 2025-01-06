@@ -33,15 +33,18 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-3">
               <Image
-                src="https://kusionstack.io/karpor/assets/logo/logo-full.svg"
+                src="https://kusionstack.io/karpor/assets/logo/logo.svg"
                 alt="Karpor Logo"
-                width={120}
+                width={40}
                 height={40}
-                className="h-8 w-auto"
+                className="h-10 w-10"
                 priority
               />
+              <span className="text-2xl tracking-wide font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-blue-100 to-white [text-shadow:_0_1px_12px_rgb(255_255_255_/_20%)]">
+                Karpor
+              </span>
             </Link>
           </div>
 
