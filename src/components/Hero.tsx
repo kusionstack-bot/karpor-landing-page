@@ -59,13 +59,6 @@ export default function Hero() {
           {/* Video Container */}
           <div className="flex justify-center items-center">
             <div className="video-container relative rounded-lg overflow-hidden bg-gray-900 w-full max-w-4xl mx-auto">
-              {/* Browser-like header */}
-              <div className="browser-header bg-gray-800/90 backdrop-blur-sm px-4 py-2 flex items-center space-x-1.5">
-                <div className="w-2 h-2 rounded-full bg-red-500/70" />
-                <div className="w-2 h-2 rounded-full bg-yellow-500/70" />
-                <div className="w-2 h-2 rounded-full bg-green-500/70" />
-              </div>
-              
               <div className="relative">
                 <video
                   ref={videoRef}
@@ -76,28 +69,6 @@ export default function Hero() {
                 >
                   <source src="https://www.kusionstack.io/karpor/assets/overview/demo.mp4" type="video/mp4" />
                 </video>
-                
-                {/* Video Controls */}
-                <div className="absolute bottom-4 right-4 flex space-x-2">
-                  <button
-                    ref={playPauseRef}
-                    onClick={handlePlayPause}
-                    className="p-2 bg-black/50 rounded-full hover:bg-black/70 transition-colors"
-                  >
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6"/>
-                    </svg>
-                  </button>
-                  <button
-                    ref={muteUnmuteRef}
-                    onClick={handleMuteUnmute}
-                    className="p-2 bg-black/50 rounded-full hover:bg-black/70 transition-colors"
-                  >
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072M12 8v8m3.536-11.536a8 8 0 010 14.142M9.364 5.364L12 8m-7.072 1.536a3 3 0 000 4.928l2.536-2.536m4.95-4.95l2.536-2.536"/>
-                    </svg>
-                  </button>
-                </div>
               </div>
             </div>
           </div>
