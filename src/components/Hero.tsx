@@ -37,7 +37,7 @@ export default function Hero() {
       </div>
       
       {/* Glow Orbs with reduced opacity */}
-      <div className="absolute top-[10%] left-[15%] w-[600px] h-[600px] rounded-full bg-blue-400/20 filter blur-[120px] mix-blend-screen animate-float-1" />
+      <div className="absolute top-0 left-0 w-[800px] h-[800px] rounded-full bg-blue-400/25 filter blur-[120px] mix-blend-screen animate-float-1" />
       <div className="absolute top-[40%] right-[10%] w-[500px] h-[500px] rounded-full bg-violet-400/20 filter blur-[120px] mix-blend-screen animate-float-2" />
       <div className="absolute bottom-[15%] left-[25%] w-[550px] h-[550px] rounded-full bg-green-400/15 filter blur-[120px] mix-blend-screen animate-float-3" />
 
