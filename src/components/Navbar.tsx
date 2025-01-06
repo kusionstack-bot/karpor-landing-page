@@ -32,20 +32,26 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-3">
+          <div className="flex items-center gap-2.5">
+            <div className="relative w-9 h-9 group flex items-center justify-center">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all duration-300 opacity-75"></div>
               <Image
                 src="https://kusionstack.io/karpor/assets/logo/logo.svg"
                 alt="Karpor Logo"
-                width={40}
-                height={40}
-                className="h-10 w-10"
+                width={36}
+                height={36}
+                className="relative z-10 drop-shadow-lg brightness-105"
                 priority
               />
-              <span className="text-2xl tracking-wide font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-200 via-blue-100 to-white [text-shadow:_0_1px_12px_rgb(255_255_255_/_20%)]">
+            </div>
+            <div className="flex flex-col -space-y-1">
+              <span className="text-xl font-bold tracking-wide bg-gradient-to-r from-white via-blue-50 to-blue-100 text-transparent bg-clip-text drop-shadow-md">
                 Karpor
               </span>
-            </Link>
+              <span className="text-[10px] tracking-widest text-blue-200/90 uppercase font-medium pl-[1px]">
+                K8s AI Visualizer
+              </span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}

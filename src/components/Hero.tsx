@@ -70,12 +70,16 @@ export default function Hero() {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex justify-center gap-4 mt-10">
-            <button className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-medium transition-all hover:scale-105">
-              Get Started
+          <div className="flex justify-center gap-6 mt-10">
+            <button className="group relative px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-blue-500/25 overflow-hidden">
+              <span className="relative z-10">Get Started</span>
+              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity blur-xl group-hover:blur-2xl"></div>
+              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-600/80 to-blue-700/80 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             </button>
-            <button className="px-6 py-3 border border-white/20 hover:border-white/40 rounded-lg font-medium transition-all hover:scale-105">
-              Watch Demo
+            <button className="group relative px-8 py-3 bg-white/5 backdrop-blur-sm text-white rounded-lg font-medium transition-all duration-300 hover:scale-105 border border-white/10 hover:border-white/20 shadow-lg overflow-hidden">
+              <span className="relative z-10 group-hover:text-white transition-colors">Watch Demo</span>
+              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-white/10 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute -inset-[1px] -z-10 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg"></div>
             </button>
           </div>
 
