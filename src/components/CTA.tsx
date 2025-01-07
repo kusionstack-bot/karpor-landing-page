@@ -57,8 +57,10 @@ helm install karpor-release kusionstack/karpor`;
                 )}
               </button>
             </div>
-            <div className="font-mono text-sm text-gray-300 text-left whitespace-pre">
-              {installCommand}
+            <div className="relative font-mono text-sm text-gray-300 text-left">
+              <pre className="overflow-x-auto scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent p-1 -mx-1">
+                <code className="whitespace-pre-wrap break-all sm:break-normal">{installCommand}</code>
+              </pre>
             </div>
           </div>
 
