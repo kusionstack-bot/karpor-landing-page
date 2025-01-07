@@ -22,7 +22,8 @@ const featuresData = [
     ],
     image: {
       src: "https://kusionstack.io/karpor/assets/search/search-auto-complete-raw.jpg",
-      alt: "Search Feature"
+      alt: "Search Feature",
+      type: "image"
     }
   },
   {
@@ -39,8 +40,10 @@ const featuresData = [
       }
     ],
     image: {
-      src: "https://kusionstack.io/karpor/assets/insight/insight-home-raw.jpg",
-      alt: "Insight Feature"
+      src: "https://kusionstack.io/karpor/assets/insight/insight-home.gif",
+      alt: "Insight Feature",
+      type: "gif",
+      placeholderSrc: "https://kusionstack.io/karpor/assets/insight/insight-home-raw.jpg"
     }
   },
   {
@@ -58,7 +61,8 @@ const featuresData = [
     ],
     image: {
       src: "https://kusionstack.io/karpor/assets/insight/insight-cost-raw.jpg",
-      alt: "Analytics Feature"
+      alt: "Analytics Feature",
+      type: "image"
     }
   }
 ];

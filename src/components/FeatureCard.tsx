@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from 'react';
 import Image from 'next/image';
 
 interface FeaturePoint {
@@ -7,18 +8,23 @@ interface FeaturePoint {
   description: string;
 }
 
+interface FeatureImage {
+  src: string;
+  alt: string;
+  type?: 'image' | 'gif';
+  placeholderSrc?: string;
+}
+
 interface FeatureCardProps {
   icon: string;
   title: string;
   points: FeaturePoint[];
-  image: {
-    src: string;
-    alt: string;
-  };
+  image: FeatureImage;
   reverse?: boolean;
 }
 
 export default function FeatureCard({ icon, title, points, image, reverse = false }: FeatureCardProps) {
+  const [isLoaded, setIsLoaded] = useState(false);
   const containerClasses = reverse
     ? "feature-card flex flex-col lg:flex-row-reverse items-center gap-12"
     : "feature-card flex flex-col lg:flex-row items-center gap-12";
@@ -41,12 +47,25 @@ export default function FeatureCard({ icon, title, points, image, reverse = fals
       </div>
       <div className="w-full lg:w-1/2">
         <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300 border border-white/10">
+          {image.type === 'gif' && image.placeholderSrc && !isLoaded && (
+            <Image
+              src={image.placeholderSrc}
+              alt={`${image.alt} placeholder`}
+              fill
+              className="object-cover transition-opacity duration-300"
+              priority
+            />
+          )}
           <Image
             src={image.src}
             alt={image.alt}
-            layout="fill"
-            objectFit="cover"
-            className="transition-transform duration-300"
+            fill
+            className={`object-cover transition-all duration-300 ${
+              image.type === 'gif' && !isLoaded ? 'opacity-0' : 'opacity-100'
+            }`}
+            onLoadingComplete={() => setIsLoaded(true)}
+            priority={image.type === 'gif'}
+            unoptimized={image.type === 'gif'}
           />
         </div>
       </div>
