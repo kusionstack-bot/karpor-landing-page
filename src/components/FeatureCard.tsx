@@ -16,14 +16,13 @@ interface FeatureImage {
 }
 
 interface FeatureCardProps {
-  icon: string;
   title: string;
   points: FeaturePoint[];
   image: FeatureImage;
   reverse?: boolean;
 }
 
-export default function FeatureCard({ icon, title, points, image, reverse = false }: FeatureCardProps) {
+export default function FeatureCard({ title, points, image, reverse = false }: FeatureCardProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const containerClasses = reverse
     ? "feature-card flex flex-col lg:flex-row-reverse items-center gap-12"
@@ -57,9 +56,6 @@ export default function FeatureCard({ icon, title, points, image, reverse = fals
   return (
     <div className={containerClasses}>
       <div className="w-full lg:w-1/2 space-y-6">
-        <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-400/20 text-blue-200">
-          <span className="text-2xl">{icon}</span>
-        </div>
         <h3 className="text-2xl font-semibold text-white">{title}</h3>
         <div className="space-y-4">
           {points.map((point, index) => (

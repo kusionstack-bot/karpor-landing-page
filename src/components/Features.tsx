@@ -8,8 +8,7 @@ const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffec
 
 const featuresData = [
   {
-    icon: "🔍",
-    title: "Flexible search",
+    title: "Flexible Search",
     points: [
       {
         title: "Automatic Syncing",
@@ -28,7 +27,6 @@ const featuresData = [
     }
   },
   {
-    icon: "💡",
     title: "Resource Insights",
     points: [
       {
@@ -48,7 +46,6 @@ const featuresData = [
     }
   },
   {
-    icon: "🤖",
     title: "AI Assistant",
     points: [
       {
