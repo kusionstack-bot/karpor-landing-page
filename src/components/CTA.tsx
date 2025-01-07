@@ -6,8 +6,8 @@ export default function CTA() {
   const [isCopied, setIsCopied] = useState(false);
 
   const installCommand = `helm repo add kusionstack https://kusionstack.github.io/charts && \\
-helm repo update && \\
-helm install karpor-release kusionstack/karpor`;
+  helm repo update && \\
+  helm install karpor-release kusionstack/karpor`;
 
   const handleCopy = async () => {
     try {
@@ -31,35 +31,46 @@ helm install karpor-release kusionstack/karpor`;
           </p>
         </div>
 
-        <div className="mx-auto mt-10 max-w-2xl">
+        <div className="mx-auto mt-10 max-w-4xl">
           {/* Install Command */}
-          <div className="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm text-gray-400">Install with Helm</span>
+          <div className="bg-[#1a1b26]/80 backdrop-blur-sm rounded-lg border border-blue-500/20 shadow-lg shadow-blue-500/5">
+            {/* Terminal Header */}
+            <div className="flex items-center justify-between px-4 py-3 border-b border-blue-500/20">
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#febc2e]"></div>
+                  <div className="w-3 h-3 rounded-full bg-[#28c840]"></div>
+                </div>
+                <span className="text-base lg:text-lg text-gray-400 ml-3">Install with Helm</span>
+              </div>
               <button
                 onClick={handleCopy}
-                className="text-blue-400 hover:text-blue-300 text-sm flex items-center gap-2 transition-colors"
+                className="text-blue-400 hover:text-blue-300 text-base lg:text-lg flex items-center gap-2 transition-colors group"
               >
                 {isCopied ? (
                   <>
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    Copied!
+                    <span className="group-hover:text-blue-300 transition-colors">Copied!</span>
                   </>
                 ) : (
                   <>
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
                     </svg>
-                    Copy
+                    <span className="group-hover:text-blue-300 transition-colors">Copy</span>
                   </>
                 )}
               </button>
             </div>
-            <div className="relative font-mono text-sm text-gray-300 text-left">
-              <pre className="overflow-x-auto scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent p-1 -mx-1">
-                <code className="whitespace-pre-wrap break-all sm:break-normal">{installCommand}</code>
+            {/* Terminal Content */}
+            <div className="relative font-mono text-base lg:text-lg text-gray-300/90 text-left bg-[#1a1b26] rounded-b-lg">
+              <pre className="overflow-x-auto scrollbar-thin scrollbar-thumb-blue-500/20 scrollbar-track-transparent p-4 lg:p-6">
+                <code className="whitespace-pre-wrap break-all sm:break-normal">
+                  <span className="text-blue-400/80">$</span> {installCommand}
+                </code>
               </pre>
             </div>
           </div>
@@ -69,11 +80,11 @@ helm install karpor-release kusionstack/karpor`;
               href="https://www.kusionstack.io/karpor/next/getting-started/installation"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 text-sm inline-flex items-center gap-2 transition-colors group"
+              className="text-blue-400 hover:text-blue-300 text-base lg:text-lg inline-flex items-center gap-2 transition-colors group font-medium"
             >
               Explore Advanced Installation Options
               <svg 
-                className="w-4 h-4 transition-transform group-hover:translate-x-1" 
+                className="w-5 h-5 lg:w-6 lg:h-6 transition-transform group-hover:translate-x-1" 
                 fill="none" 
                 viewBox="0 0 24 24" 
                 stroke="currentColor"
