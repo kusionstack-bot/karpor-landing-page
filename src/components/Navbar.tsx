@@ -19,7 +19,6 @@ export default function Navbar() {
   const navItems = [
     { name: 'Features', href: '#features' },
     { name: 'Solutions', href: '#solutions' },
-    { name: 'Pricing', href: '#pricing' },
     { name: 'Documentation', href: '#docs' },
   ];
 
@@ -66,9 +65,6 @@ export default function Navbar() {
               </Link>
             ))}
             <div className="flex items-center space-x-4">
-              <button className="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors">
-                Sign in
-              </button>
               <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105">
                 Get Started
               </button>
@@ -109,9 +105,6 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="pt-4 pb-3 border-t border-gray-700">
-            <button className="block w-full px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700">
-              Sign in
-            </button>
             <button className="mt-2 block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-blue-500 hover:bg-blue-600">
               Get Started
             </button>
