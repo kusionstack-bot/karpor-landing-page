@@ -48,7 +48,7 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto space-y-8">
           {/* Main Title */}
           <h1 className="text-5xl md:text-6xl font-bold">
-            <span className="animate-gradient-text">
+            <span className="animate-gradient-text pb-1">
               Intelligence for Kubernetes
             </span>
           </h1>
