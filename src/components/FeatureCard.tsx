@@ -46,27 +46,36 @@ export default function FeatureCard({ icon, title, points, image, reverse = fals
         </div>
       </div>
       <div className="w-full lg:w-1/2">
-        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300 border border-white/10">
-          {image.type === 'gif' && image.placeholderSrc && !isLoaded && (
+        <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300 border border-white/10">
+          <div className="relative">
+            {image.type === 'gif' && image.placeholderSrc && !isLoaded && (
+              <Image
+                src={image.placeholderSrc}
+                alt={`${image.alt} placeholder`}
+                width={1920}
+                height={1080}
+                className="w-full h-auto"
+                priority
+              />
+            )}
             <Image
-              src={image.placeholderSrc}
-              alt={`${image.alt} placeholder`}
-              fill
-              className="object-cover transition-opacity duration-300"
-              priority
+              src={image.src}
+              alt={image.alt}
+              width={1920}
+              height={1080}
+              className={`w-full h-auto transition-all duration-300 ${
+                image.type === 'gif' && !isLoaded ? 'opacity-0' : 'opacity-100'
+              }`}
+              style={{
+                position: image.type === 'gif' ? 'absolute' : 'relative',
+                top: 0,
+                left: 0
+              }}
+              onLoadingComplete={() => setIsLoaded(true)}
+              priority={image.type === 'gif'}
+              unoptimized={image.type === 'gif'}
             />
-          )}
-          <Image
-            src={image.src}
-            alt={image.alt}
-            fill
-            className={`object-cover transition-all duration-300 ${
-              image.type === 'gif' && !isLoaded ? 'opacity-0' : 'opacity-100'
-            }`}
-            onLoadingComplete={() => setIsLoaded(true)}
-            priority={image.type === 'gif'}
-            unoptimized={image.type === 'gif'}
-          />
+          </div>
         </div>
       </div>
     </div>
