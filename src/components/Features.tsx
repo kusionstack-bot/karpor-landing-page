@@ -9,7 +9,7 @@ const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffec
 const featuresData = [
   {
     icon: "🔍",
-    title: "Intelligent Search",
+    title: "Flexible search",
     points: [
       {
         title: "Automatic Syncing",
@@ -21,14 +21,15 @@ const featuresData = [
       }
     ],
     image: {
-      src: "https://kusionstack.io/karpor/assets/search/search-auto-complete-raw.jpg",
+      src: "/search.gif",
       alt: "Search Feature",
-      type: "image/jpeg"
+      type: "image/gif",
+      placeholderSrc: "https://kusionstack.io/karpor/assets/search/search-auto-complete-raw.jpg"
     }
   },
   {
     icon: "💡",
-    title: "Deep Insights",
+    title: "Resource Insights",
     points: [
       {
         title: "Compliance Monitoring",
@@ -40,29 +41,30 @@ const featuresData = [
       }
     ],
     image: {
-      src: "https://kusionstack.io/karpor/assets/insight/insight-home.gif",
+      src: "/insight.gif",
       alt: "Insight Feature",
       type: "image/gif",
       placeholderSrc: "https://kusionstack.io/karpor/assets/insight/insight-home-raw.jpg"
     }
   },
   {
-    icon: "📊",
-    title: "Cost Analytics",
+    icon: "🤖",
+    title: "AI Assistant",
     points: [
       {
-        title: "Resource Optimization",
-        description: "Identify cost-saving opportunities across your clusters with detailed resource usage analysis and recommendations."
+        title: "Intelligent Operations",
+        description: "Powered by LLM, our AI assistant automatically analyzes system events and logs, providing real-time insights and recommendations."
       },
       {
-        title: "Usage Tracking",
-        description: "Monitor and analyze resource usage patterns over time, helping you make data-driven decisions."
+        title: "One-Click Solutions",
+        description: "Get expert-level diagnostics and solutions with just one click, as if you're consulting a Kubernetes expert right at your fingertips."
       }
     ],
     image: {
-      src: "https://kusionstack.io/karpor/assets/insight/insight-cost-raw.jpg",
-      alt: "Analytics Feature",
-      type: "image/jpeg"
+      src: "/ai.gif",
+      alt: "AI Assistant Feature",
+      type: "image/gif",
+      placeholderSrc: "https://kusionstack.io/karpor/assets/insight/insight-home-raw.jpg"
     }
   }
 ];
