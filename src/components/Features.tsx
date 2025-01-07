@@ -23,7 +23,7 @@ const featuresData = [
     image: {
       src: "https://kusionstack.io/karpor/assets/search/search-auto-complete-raw.jpg",
       alt: "Search Feature",
-      type: "image"
+      type: "image/jpeg"
     }
   },
   {
@@ -42,7 +42,7 @@ const featuresData = [
     image: {
       src: "https://kusionstack.io/karpor/assets/insight/insight-home.gif",
       alt: "Insight Feature",
-      type: "gif",
+      type: "image/gif",
       placeholderSrc: "https://kusionstack.io/karpor/assets/insight/insight-home-raw.jpg"
     }
   },
@@ -62,7 +62,7 @@ const featuresData = [
     image: {
       src: "https://kusionstack.io/karpor/assets/insight/insight-cost-raw.jpg",
       alt: "Analytics Feature",
-      type: "image"
+      type: "image/jpeg"
     }
   }
 ];
