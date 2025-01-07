@@ -29,12 +29,17 @@ export default function Hero() {
       <div className="container relative mx-auto px-6 text-center py-28">
         {/* Version Update Banner */}
         <div className="mb-8 inline-flex items-center">
-          <span className="inline-flex items-center gap-3 px-5 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-blue-500/15 via-purple-500/15 to-blue-500/15 text-white/90 border border-blue-400/20 hover:border-blue-400/40 transition-colors">
+          <a
+            href="https://github.com/KusionStack/karpor/releases/tag/v0.5.9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-5 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-blue-500/15 via-purple-500/15 to-blue-500/15 text-white/90 border border-blue-400/20 hover:border-blue-400/40 transition-colors"
+          >
             <span className="text-blue-300">🎉</span>
             <span className="font-semibold text-blue-200">v0.6.0</span>
             <span className="text-gray-300">Released with AI-Powered Experience</span>
             <span className="text-blue-300 animate-bounce-x">→</span>
-          </span>
+          </a>
         </div>
 
         <div className="max-w-4xl mx-auto space-y-8">
