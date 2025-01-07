@@ -18,8 +18,7 @@ export default function Navbar() {
 
   const navItems = [
     { name: 'Features', href: '#features' },
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'Documentation', href: '#docs' },
+    { name: 'Documentation', href: 'https://www.kusionstack.io/karpor' },
   ];
 
   return (
@@ -64,10 +63,15 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <div className="flex items-center space-x-4">
-              <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all hover:scale-105">
-                Get Started
-              </button>
+            <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
+              <a
+                href="https://www.kusionstack.io/karpor/getting-started/quick-start"
+                className="inline-block rounded-lg px-4 py-1.5 text-sm font-semibold leading-6 bg-blue-600 text-white shadow-sm ring-1 ring-blue-500/50 hover:bg-blue-700 hover:ring-blue-600/50"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get started
+              </a>
             </div>
           </div>
 
@@ -105,9 +109,14 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="pt-4 pb-3 border-t border-gray-700">
-            <button className="mt-2 block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-blue-500 hover:bg-blue-600">
+            <a
+              href="https://www.kusionstack.io/karpor/getting-started/quick-start"
+              className="mt-2 block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-blue-500 hover:bg-blue-600"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Get Started
-            </button>
+            </a>
           </div>
         </div>
       </div>

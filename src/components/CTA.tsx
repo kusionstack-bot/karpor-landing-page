@@ -27,7 +27,7 @@ helm install karpor-release kusionstack/karpor`;
             Deploy Karpor in Seconds
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-300">
-            One command to unlock powerful Kubernetes search and insights capabilities. Experience the future of cluster management today.
+            One command to unlock powerful Kubernetes search and insights capabilities.
           </p>
         </div>
 
