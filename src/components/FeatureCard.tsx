@@ -19,8 +19,12 @@ interface FeatureCardProps {
 }
 
 export default function FeatureCard({ icon, title, points, image, reverse = false }: FeatureCardProps) {
+  const containerClasses = reverse
+    ? "feature-card flex flex-col lg:flex-row-reverse items-center gap-12"
+    : "feature-card flex flex-col lg:flex-row items-center gap-12";
+
   return (
-    <div className={`feature-card flex flex-col lg:flex-row${reverse ? '-reverse' : ''} items-center gap-12`}>
+    <div className={containerClasses}>
       <div className="w-full lg:w-1/2 space-y-6">
         <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-400/20 text-blue-200">
           <span className="text-2xl">{icon}</span>
