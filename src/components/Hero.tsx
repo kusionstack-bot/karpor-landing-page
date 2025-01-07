@@ -23,18 +23,8 @@ export default function Hero() {
   };
 
   return (
-    <header className="relative min-h-screen flex items-center bg-gradient-to-br from-gray-900 to-blue-700 overflow-hidden">
-      {/* Dynamic Grid */}
-      <div className="grid-overlay">
-        <div className="dynamic-grid h-full w-full" />
-      </div>
-      
-      {/* Glow Orbs with reduced opacity */}
-      <div className="absolute top-0 left-0 w-[800px] h-[800px] rounded-full bg-blue-400/25 filter blur-[120px] mix-blend-screen animate-float-1" />
-      <div className="absolute top-[40%] right-[10%] w-[500px] h-[500px] rounded-full bg-violet-400/20 filter blur-[120px] mix-blend-screen animate-float-2" />
-      <div className="absolute bottom-[15%] left-[25%] w-[550px] h-[550px] rounded-full bg-green-400/15 filter blur-[120px] mix-blend-screen animate-float-3" />
-
-      <div className="container relative z-10 mx-auto px-6 text-center py-28">
+    <header className="relative min-h-screen flex items-center">
+      <div className="container relative mx-auto px-6 text-center py-28">
         {/* Version Update Banner */}
         <div className="mb-8 inline-flex items-center">
           <span className="inline-flex items-center gap-3 px-5 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-blue-500/15 via-purple-500/15 to-blue-500/15 text-white/90 border border-blue-400/20 hover:border-blue-400/40 transition-colors">
