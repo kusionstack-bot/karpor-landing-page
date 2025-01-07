@@ -1,10 +1,67 @@
 "use client";
 
 import { useEffect, useLayoutEffect, useRef } from 'react';
-import Image from 'next/image';
+import FeatureCard from './FeatureCard';
 
 // 为了避免 SSR 警告，创建一个安全的 useLayoutEffect
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
+
+const featuresData = [
+  {
+    icon: "🔍",
+    title: "Intelligent Search",
+    points: [
+      {
+        title: "Automatic Syncing",
+        description: "Real-time synchronization of resources across all your clusters, ensuring you always have the latest data at your fingertips."
+      },
+      {
+        title: "Smart Queries",
+        description: "Find resources quickly with powerful search capabilities and filters, making resource management effortless."
+      }
+    ],
+    image: {
+      src: "https://kusionstack.io/karpor/assets/search/search-auto-complete-raw.jpg",
+      alt: "Search Feature"
+    }
+  },
+  {
+    icon: "💡",
+    title: "Deep Insights",
+    points: [
+      {
+        title: "Compliance Monitoring",
+        description: "Track and ensure compliance across all your clusters with comprehensive monitoring and reporting tools."
+      },
+      {
+        title: "Resource Visualization",
+        description: "Interactive topology views of your Kubernetes resources, providing clear visibility into your infrastructure."
+      }
+    ],
+    image: {
+      src: "https://kusionstack.io/karpor/assets/insight/insight-home-raw.jpg",
+      alt: "Insight Feature"
+    }
+  },
+  {
+    icon: "📊",
+    title: "Cost Analytics",
+    points: [
+      {
+        title: "Resource Optimization",
+        description: "Identify cost-saving opportunities across your clusters with detailed resource usage analysis and recommendations."
+      },
+      {
+        title: "Usage Tracking",
+        description: "Monitor and analyze resource usage patterns over time, helping you make data-driven decisions."
+      }
+    ],
+    image: {
+      src: "https://kusionstack.io/karpor/assets/insight/insight-cost-raw.jpg",
+      alt: "Analytics Feature"
+    }
+  }
+];
 
 export default function Features() {
   const hasAnimated = useRef(false);
@@ -97,98 +154,13 @@ export default function Features() {
         </div>
         
         <div className="space-y-32">
-          {/* Search Feature */}
-          <div className="feature-card flex flex-col lg:flex-row items-center gap-12">
-            <div className="w-full lg:w-1/2 space-y-6">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-blue-400/20 text-blue-200">
-                <span className="text-2xl">🔍</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-white">Intelligent Search</h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="font-medium text-gray-200">Automatic Syncing</p>
-                  <p className="text-gray-400">Real-time synchronization of resources across all your clusters, ensuring you always have the latest data at your fingertips.</p>
-                </div>
-                <div>
-                  <p className="font-medium text-gray-200">Smart Queries</p>
-                  <p className="text-gray-400">Find resources quickly with powerful search capabilities and filters, making resource management effortless.</p>
-                </div>
-              </div>
-            </div>
-            <div className="w-full lg:w-1/2">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300 border border-white/10">
-                <Image
-                  src="https://kusionstack.io/karpor/assets/search/search-auto-complete-raw.jpg"
-                  alt="Search Feature"
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-transform duration-300"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Insight Feature */}
-          <div className="feature-card flex flex-col lg:flex-row-reverse items-center gap-12">
-            <div className="w-full lg:w-1/2 space-y-6">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-purple-400/20 text-purple-200">
-                <span className="text-2xl">💡</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-white">Deep Insights</h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="font-medium text-gray-200">Compliance Monitoring</p>
-                  <p className="text-gray-400">Track and ensure compliance across all your clusters with comprehensive monitoring and reporting tools.</p>
-                </div>
-                <div>
-                  <p className="font-medium text-gray-200">Resource Visualization</p>
-                  <p className="text-gray-400">Interactive topology views of your Kubernetes resources, providing clear visibility into your infrastructure.</p>
-                </div>
-              </div>
-            </div>
-            <div className="w-full lg:w-1/2">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300 border border-white/10">
-                <Image
-                  src="https://kusionstack.io/karpor/assets/insight/insight-home-raw.jpg"
-                  alt="Insight Feature"
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-transform duration-300"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Analytics Feature */}
-          <div className="feature-card flex flex-col lg:flex-row items-center gap-12">
-            <div className="w-full lg:w-1/2 space-y-6">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-green-400/20 text-green-200">
-                <span className="text-2xl">📊</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-white">Cost Analytics</h3>
-              <div className="space-y-4">
-                <div>
-                  <p className="font-medium text-gray-200">Resource Optimization</p>
-                  <p className="text-gray-400">Identify cost-saving opportunities across your clusters with detailed resource usage analysis and recommendations.</p>
-                </div>
-                <div>
-                  <p className="font-medium text-gray-200">Usage Tracking</p>
-                  <p className="text-gray-400">Monitor and analyze resource usage patterns over time, helping you make data-driven decisions.</p>
-                </div>
-              </div>
-            </div>
-            <div className="w-full lg:w-1/2">
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-transform duration-300 border border-white/10">
-                <Image
-                  src="https://kusionstack.io/karpor/assets/insight/insight-cost-raw.jpg"
-                  alt="Analytics Feature"
-                  layout="fill"
-                  objectFit="cover"
-                  className="transition-transform duration-300"
-                />
-              </div>
-            </div>
-          </div>
+          {featuresData.map((feature, index) => (
+            <FeatureCard
+              key={index}
+              {...feature}
+              reverse={index % 2 === 1}
+            />
+          ))}
         </div>
       </div>
     </section>
