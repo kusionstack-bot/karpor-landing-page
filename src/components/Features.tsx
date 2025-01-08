@@ -39,9 +39,9 @@ const featuresData = [
       }
     ],
     image: {
-      src: "/assets/insight.gif",
+      src: "/assets/insight.mp4",
       alt: "Insight Feature",
-      type: "image/gif" as const,
+      type: "video/mp4" as const,
       placeholderSrc: "https://kusionstack.io/karpor/assets/insight/insight-home-raw.jpg"
     }
   },
