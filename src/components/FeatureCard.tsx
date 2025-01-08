@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
 
 interface FeaturePoint {
@@ -8,31 +8,36 @@ interface FeaturePoint {
   description: string;
 }
 
-interface FeatureImage {
+interface FeatureMedia {
   src: string;
   alt: string;
-  type: string;
+  type: 'image/gif' | 'image/png' | 'image/jpeg' | 'video/mp4';
   placeholderSrc?: string;
 }
 
 interface FeatureCardProps {
   title: string;
   points: FeaturePoint[];
-  image: FeatureImage;
+  image: FeatureMedia;
   reverse?: boolean;
 }
 
 export default function FeatureCard({ title, points, image, reverse = false }: FeatureCardProps) {
   const [isLoaded, setIsLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  
   const containerClasses = reverse
     ? "lg:flex-row-reverse"
     : "";
 
-  const imageContent = () => {
-    const isGif = image.type.includes('gif');
+  const mediaContent = () => {
+    const isVideo = image.type === 'video/mp4';
+    const isGif = image.type === 'image/gif';
+
     return (
-      <div className="relative w-full">
-        {isGif && image.placeholderSrc && !isLoaded && (
+      <div className="relative w-full rounded-xl overflow-hidden">
+        {/* Placeholder image for GIFs and videos */}
+        {(isGif || isVideo) && image.placeholderSrc && !isLoaded && (
           <Image
             src={image.placeholderSrc}
             alt={image.alt}
@@ -43,19 +48,38 @@ export default function FeatureCard({ title, points, image, reverse = false }: F
             quality={90}
           />
         )}
-        <Image
-          src={image.src}
-          alt={image.alt}
-          width={1920}
-          height={1280}
-          className={`w-full h-auto rounded-xl transition-all duration-500 ${
-            isLoaded ? 'opacity-100' : 'opacity-0'
-          }`}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 55vw"
-          quality={90}
-          onLoad={() => setIsLoaded(true)}
-          priority={true}
-        />
+
+        {isVideo ? (
+          <div className="rounded-xl overflow-hidden">
+            <video
+              ref={videoRef}
+              className={`w-full h-auto transition-all duration-500 ${
+                isLoaded ? 'opacity-100' : 'opacity-0'
+              }`}
+              autoPlay
+              muted
+              loop
+              playsInline
+              onLoadedData={() => setIsLoaded(true)}
+            >
+              <source src={image.src} type="video/mp4" />
+            </video>
+          </div>
+        ) : (
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={1920}
+            height={1280}
+            className={`w-full h-auto rounded-xl transition-all duration-500 ${
+              isLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 55vw"
+            quality={90}
+            onLoad={() => setIsLoaded(true)}
+            priority={true}
+          />
+        )}
       </div>
     );
   };
@@ -82,7 +106,7 @@ export default function FeatureCard({ title, points, image, reverse = false }: F
         </div>
       </div>
       <div className="w-full lg:w-3/5 flex items-center">
-        {imageContent()}
+        {mediaContent()}
       </div>
     </div>
   );

@@ -20,9 +20,9 @@ const featuresData = [
       }
     ],
     image: {
-      src: "/assets/search.gif",
+      src: "/assets/search.mp4",
       alt: "Search Feature",
-      type: "image/gif",
+      type: "video/mp4" as const,
       placeholderSrc: "https://kusionstack.io/karpor/assets/search/search-auto-complete-raw.jpg"
     }
   },
@@ -41,7 +41,7 @@ const featuresData = [
     image: {
       src: "/assets/insight.gif",
       alt: "Insight Feature",
-      type: "image/gif",
+      type: "image/gif" as const,
       placeholderSrc: "https://kusionstack.io/karpor/assets/insight/insight-home-raw.jpg"
     }
   },
@@ -60,11 +60,11 @@ const featuresData = [
     image: {
       src: "/assets/ai.gif",
       alt: "AI Assistant Feature",
-      type: "image/gif",
+      type: "image/gif" as const,
       placeholderSrc: "https://kusionstack.io/karpor/assets/insight/insight-home-raw.jpg"
     }
   }
-];
+] as const;
 
 export default function Features() {
   const hasAnimated = useRef(false);
