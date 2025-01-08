@@ -64,7 +64,7 @@ const featuresData = [
       placeholderSrc: "https://kusionstack.io/karpor/assets/insight/insight-home-raw.jpg"
     }
   }
-] as const;
+];
 
 export default function Features() {
   const hasAnimated = useRef(false);
