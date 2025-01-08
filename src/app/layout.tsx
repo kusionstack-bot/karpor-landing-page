@@ -1,10 +1,17 @@
 import './globals.css'
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#000000',
+}
+
 export const metadata: Metadata = {
+  metadataBase: new URL('https://karpor.kusionstack.io'),
   title: 'Karpor - Intelligence for Kubernetes',
   description: 'Advanced Search and Insight capabilities for your Kubernetes clusters across any clouds. Powered by LLM, providing real-time insights and expert-level solutions.',
   keywords: [
@@ -44,11 +51,6 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/manifest.json',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
-  themeColor: '#000000',
   openGraph: {
     type: 'website',
     locale: 'en_US',

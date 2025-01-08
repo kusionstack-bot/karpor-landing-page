@@ -53,7 +53,8 @@ export default function FeatureCard({ title, points, image, reverse = false }: F
           }`}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 55vw"
           quality={90}
-          onLoadingComplete={() => setIsLoaded(true)}
+          onLoad={() => setIsLoaded(true)}
+          priority={true}
         />
       </div>
     );
