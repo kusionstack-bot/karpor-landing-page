@@ -83,10 +83,10 @@ export default function Hero() {
 
             {/* Video Container */}
             <div className="mt-4 sm:mt-8 rounded-lg sm:rounded-2xl overflow-hidden border border-white/10 shadow-2xl mx-auto max-w-[90vw] sm:max-w-none">
-              <div className="relative">
+              <div className="relative rounded-lg sm:rounded-2xl overflow-hidden">
                 <video
                   ref={videoRef}
-                  className="w-full aspect-video object-cover"
+                  className="w-full aspect-video object-cover rounded-lg sm:rounded-2xl"
                   autoPlay
                   muted
                   loop
