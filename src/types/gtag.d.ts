@@ -17,7 +17,7 @@ interface Window {
   dataLayer: any[];
 }
 
-// 扩展全局 Window 类型
+// Extend global Window type
 declare global {
   interface Window {
     gtag: (

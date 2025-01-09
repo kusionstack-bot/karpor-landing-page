@@ -21,15 +21,15 @@ export const metadata: Metadata = {
   authors: [{ name: 'KusionStack' }],
   icons: {
     icon: [
-      { url: '/favicon.ico' },  // 基础 favicon
-      { url: '/logo192.png', sizes: '192x192', type: 'image/png' },  // PWA 图标
-      { url: '/logo512.png', sizes: '512x512', type: 'image/png' },  // PWA 大图标
+      { url: '/favicon.ico' },  // Basic favicon
+      { url: '/logo192.png', sizes: '192x192', type: 'image/png' },  // PWA icon
+      { url: '/logo512.png', sizes: '512x512', type: 'image/png' },  // PWA large icon
     ],
     apple: [
-      { url: '/logo192.png' },  // 暂时用 logo192 作为 iOS 图标
+      { url: '/logo192.png' },  // Temporary iOS icon using logo192
     ],
   },
-  manifest: '/manifest.json',  // PWA manifest 文件
+  manifest: '/manifest.json',  // PWA manifest file
   openGraph: {
     title: 'Karpor - Intelligence for Kubernetes',
     description:

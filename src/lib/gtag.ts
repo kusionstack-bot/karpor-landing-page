@@ -1,10 +1,10 @@
 'use client';
 
-// 这里使用了 gtag.d.ts 中定义的 window.gtag 类型
+// Using window.gtag type defined in gtag.d.ts
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 export const pageview = (url: string) => {
   if (typeof window.gtag !== 'undefined') {
-    // TypeScript 会检查这里的参数类型
+    // TypeScript will check parameter types
     window.gtag('config', process.env.NEXT_PUBLIC_GA_ID!, {
       page_path: url,
     });
@@ -19,7 +19,7 @@ export const event = ({ action, category, label, value }: {
   value?: number;
 }) => {
   if (typeof window.gtag !== 'undefined') {
-    // TypeScript 会检查这里的参数类型
+    // TypeScript will check parameter types
     window.gtag('event', action, {
       event_category: category,
       event_label: label,
