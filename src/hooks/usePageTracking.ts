@@ -9,8 +9,8 @@ export const usePageTracking = () => {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    if (process.env.NEXT_PUBLIC_GA_ID) {
-      const url = pathname + searchParams.toString();
+    if (pathname && typeof window !== 'undefined') {
+      const url = pathname + (searchParams?.toString() || '');
       gtag.pageview(url);
     }
   }, [pathname, searchParams]);

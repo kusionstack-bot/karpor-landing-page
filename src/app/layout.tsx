@@ -2,7 +2,6 @@ import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
-import { usePageTracking } from '@/hooks/usePageTracking'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -71,14 +70,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // 使用 hook 追踪页面访问
-  usePageTracking();
-
   return (
     <html lang="en">
-      <head>
-        <link rel="license" href="http://www.apache.org/licenses/LICENSE-2.0" />
-      </head>
       <body className={inter.className}>
         <GoogleAnalytics />
         {children}
