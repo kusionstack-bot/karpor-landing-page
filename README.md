@@ -6,28 +6,48 @@
 
 This is the landing page for Karpor, a Kubernetes Explorer focusing on Search, Insight, and AI capabilities. Built with Next.js and Tailwind CSS, it provides a modern and responsive user interface to showcase Karpor's features.
 
+### Quick Start
+
+1. **Setup**
+   ```bash
+   # Clone the repository
+   git clone https://github.com/KusionStack/karpor-landing-page.git
+   cd karpor-landing-page
+
+   # Install dependencies
+   npm install
+   ```
+
+2. **Configuration**
+   ```bash
+   # Create .env.local and add your GA ID
+   echo "NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX" > .env.local
+   ```
+
+3. **Development**
+   ```bash
+   # Start development server
+   npm run dev
+   ```
+
+4. **Production**
+   ```bash
+   # Build and start
+   npm run build
+   npm start
+   ```
+
+5. **Deployment (Vercel)**
+   - Push to GitHub
+   - Import to Vercel
+   - Add `NEXT_PUBLIC_GA_ID` in project settings
+
 ### Features
 
 - 🎨 **Modern UI/UX**: Clean and intuitive interface with smooth transitions
 - 📱 **Responsive Design**: Optimized for all devices from mobile to desktop
 - ⚡ **Performance**: Fast loading with optimized assets and code splitting
 - 📊 **Analytics**: Built-in Google Analytics support
-
-### Development
-
-```bash
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
-```
 
 ### Environment Variables
 
