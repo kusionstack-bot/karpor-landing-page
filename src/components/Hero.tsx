@@ -27,7 +27,7 @@ export default function Hero() {
   return (
     <header className="relative min-h-screen flex items-center">
       <div className="container relative mx-auto px-4 sm:px-6 text-center">
-        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/20" />
+        <div className="absolute inset-x-0 top-0 h-16 from-black/20" />
         <div className="pt-28 pb-16 sm:py-28 relative">
           <div className="max-w-4xl mx-auto space-y-4 sm:space-y-8">
             {/* Version Update Banner */}
