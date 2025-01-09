@@ -1,64 +1,42 @@
 # Karpor Landing Page
 
-基于 Next.js 和 Tailwind CSS 构建的 Karpor 产品落地页。
+[English](./README.md) | [中文](./README_zh.md)
 
-## 功能特点
+## English
 
-- 响应式设计
-- 现代化 UI/UX
-- 平滑滚动动画
-- 优化的性能
+### Introduction
 
-## 技术栈
+This is the landing page for Karpor, a Kubernetes Explorer focusing on Search, Insight, and AI capabilities. Built with Next.js and Tailwind CSS, it provides a modern and responsive user interface to showcase Karpor's features.
 
-- Next.js 13+
-- TypeScript
-- Tailwind CSS
-- GSAP (动画)
-- Three.js (3D 效果)
+### Features
 
-## 开始使用
+- 🔍 **Flexible Search**: Real-time synchronization and smart queries across clusters
+- 📊 **Resource Insights**: Comprehensive monitoring and interactive topology views
+- 🤖 **AI Assistant**: LLM-powered analysis and expert-level diagnostics
 
-1. 克隆仓库：
+### Development
+
 ```bash
-git clone [repository-url]
-```
-
-2. 安装依赖：
-```bash
+# Install dependencies
 npm install
-```
 
-3. 运行开发服务器：
-```bash
+# Start development server
 npm run dev
-```
 
-4. 打开浏览器访问 `http://localhost:3000`
-
-## 项目结构
-
-```
-src/
-  ├── app/              # Next.js 13+ App Router
-  ├── components/       # React 组件
-  ├── styles/          # 全局样式
-  └── types/           # TypeScript 类型定义
-```
-
-## 开发指南
-
-- 所有组件都使用 TypeScript
-- 使用 Tailwind CSS 进行样式设计
-- 遵循 Next.js 13+ 的最佳实践
-- 使用 GSAP 实现动画效果
-
-## 构建部署
-
-```bash
-# 构建生产版本
+# Build for production
 npm run build
 
-# 本地预览生产版本
-npm run start
+# Start production server
+npm start
 ```
+
+### Tech Stack
+
+- Next.js 14
+- React 18
+- Tailwind CSS
+- TypeScript
+
+### License
+
+Apache License 2.0
