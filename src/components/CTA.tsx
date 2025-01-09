@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import * as gtag from '@/lib/gtag';
 
 export default function CTA() {
   const [isCopied, setIsCopied] = useState(false);
@@ -45,7 +46,15 @@ export default function CTA() {
                 <span className="text-base lg:text-lg text-gray-400 ml-3">Install with Helm</span>
               </div>
               <button
-                onClick={handleCopy}
+                onClick={() => {
+                  handleCopy();
+                  gtag.event({
+                    action: 'click',
+                    category: 'CTA',
+                    label: 'Copy Command',
+                    value: 1
+                  });
+                }}
                 className="text-blue-400 hover:text-blue-300 text-base lg:text-lg flex items-center gap-2 transition-colors group"
               >
                 {isCopied ? (
@@ -81,6 +90,14 @@ export default function CTA() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 text-base lg:text-lg inline-flex items-center gap-2 transition-colors group font-medium"
+              onClick={() => {
+                gtag.event({
+                  action: 'click',
+                  category: 'CTA',
+                  label: 'Advanced Installation',
+                  value: 1
+                });
+              }}
             >
               Explore Advanced Installation Options
               <svg 
