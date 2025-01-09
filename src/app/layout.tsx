@@ -2,7 +2,6 @@ import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
-import { usePageTracking } from '@/hooks/usePageTracking'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,15 +21,15 @@ export const metadata: Metadata = {
   authors: [{ name: 'KusionStack' }],
   icons: {
     icon: [
-      { url: '/favicon.ico' },  // 基础 favicon
-      { url: '/logo192.png', sizes: '192x192', type: 'image/png' },  // PWA 图标
-      { url: '/logo512.png', sizes: '512x512', type: 'image/png' },  // PWA 大图标
+      { url: '/favicon.ico' },  // Basic favicon
+      { url: '/logo192.png', sizes: '192x192', type: 'image/png' },  // PWA icon
+      { url: '/logo512.png', sizes: '512x512', type: 'image/png' },  // PWA large icon
     ],
     apple: [
-      { url: '/logo192.png' },  // 暂时用 logo192 作为 iOS 图标
+      { url: '/logo192.png' },  // Temporary iOS icon using logo192
     ],
   },
-  manifest: '/manifest.json',  // PWA manifest 文件
+  manifest: '/manifest.json',  // PWA manifest file
   openGraph: {
     title: 'Karpor - Intelligence for Kubernetes',
     description:
@@ -71,14 +70,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // 使用 hook 追踪页面访问
-  usePageTracking();
-
   return (
     <html lang="en">
-      <head>
-        <link rel="license" href="http://www.apache.org/licenses/LICENSE-2.0" />
-      </head>
       <body className={inter.className}>
         <GoogleAnalytics />
         {children}

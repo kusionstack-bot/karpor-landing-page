@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import * as gtag from '@/lib/gtag';
 
 interface HeroButtonProps {
   type: 'github' | 'demo';
@@ -91,6 +92,14 @@ export default function HeroButton({ type, href }: HeroButtonProps) {
       className={buttonClasses}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => {
+        gtag.event({
+          action: 'click',
+          category: 'Hero',
+          label: `${type === 'github' ? 'GitHub' : 'Live Demo'} Button`,
+          value: 1
+        });
+      }}
     >
       {type === 'github' ? (
         <>

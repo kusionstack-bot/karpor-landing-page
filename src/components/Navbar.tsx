@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import * as gtag from '@/lib/gtag';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,25 +32,34 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-2.5">
-            <div className="relative w-9 h-9 group flex items-center justify-center">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all duration-300 opacity-75"></div>
-              <Image
-                src="https://kusionstack.io/karpor/assets/logo/logo.svg"
-                alt="Karpor Logo"
-                width={36}
-                height={36}
-                className="relative z-10 drop-shadow-lg brightness-105"
-                priority
-              />
-            </div>
-            <div className="flex flex-col -space-y-1">
-              <span className="text-xl font-bold tracking-wide bg-gradient-to-r from-white via-blue-50 to-blue-100 text-transparent bg-clip-text drop-shadow-md">
-                Karpor
-              </span>
-              <span className="text-[10px] tracking-widest text-blue-200/90 uppercase font-medium pl-[1px]">
-                K8s AI Visualizer
-              </span>
-            </div>
+            <a href="/" className="flex items-center gap-2.5" onClick={() => {
+              gtag.event({
+                action: 'click',
+                category: 'Navigation',
+                label: 'Logo',
+                value: 1
+              });
+            }}>
+              <div className="relative w-9 h-9 group flex items-center justify-center">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-lg blur-lg group-hover:blur-xl transition-all duration-300 opacity-75"></div>
+                <Image
+                  src="https://kusionstack.io/karpor/assets/logo/logo.svg"
+                  alt="Karpor Logo"
+                  width={36}
+                  height={36}
+                  className="relative z-10 drop-shadow-lg brightness-105"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col -space-y-1">
+                <span className="text-xl font-bold tracking-wide bg-gradient-to-r from-white via-blue-50 to-blue-100 text-transparent bg-clip-text drop-shadow-md">
+                  Karpor
+                </span>
+                <span className="text-[10px] tracking-widest text-blue-200/90 uppercase font-medium pl-[1px]">
+                  K8s AI Visualizer
+                </span>
+              </div>
+            </a>
           </div>
 
           {/* Desktop Navigation */}
@@ -59,6 +69,14 @@ export default function Navbar() {
                 key={item.name}
                 href={item.href}
                 className="text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium hover:bg-white/5 rounded-lg"
+                onClick={() => {
+                  gtag.event({
+                    action: 'click',
+                    category: 'Navigation',
+                    label: item.name,
+                    value: 1
+                  });
+                }}
               >
                 {item.name}
               </Link>
@@ -69,6 +87,14 @@ export default function Navbar() {
                 className="inline-block rounded-lg px-4 py-1.5 text-sm font-semibold leading-6 bg-blue-600 text-white shadow-sm ring-1 ring-blue-500/50 hover:bg-blue-700 hover:ring-blue-600/50"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  gtag.event({
+                    action: 'click',
+                    category: 'Navigation',
+                    label: 'Get Started',
+                    value: 1
+                  });
+                }}
               >
                 Get started
               </a>
@@ -104,6 +130,14 @@ export default function Navbar() {
               key={item.name}
               href={item.href}
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
+              onClick={() => {
+                gtag.event({
+                  action: 'click',
+                  category: 'Navigation',
+                  label: item.name,
+                  value: 1
+                });
+              }}
             >
               {item.name}
             </Link>
@@ -114,6 +148,14 @@ export default function Navbar() {
               className="mt-2 block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-blue-500 hover:bg-blue-600"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => {
+                gtag.event({
+                  action: 'click',
+                  category: 'Navigation',
+                  label: 'Get Started',
+                  value: 1
+                });
+              }}
             >
               Get Started
             </a>
