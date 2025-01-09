@@ -2,17 +2,15 @@
 
 [English](./README.md) | [中文](./README_zh.md)
 
-## English
-
 ### Introduction
 
 This is the landing page for Karpor, a Kubernetes Explorer focusing on Search, Insight, and AI capabilities. Built with Next.js and Tailwind CSS, it provides a modern and responsive user interface to showcase Karpor's features.
 
 ### Features
 
-- 🔍 **Flexible Search**: Real-time synchronization and smart queries across clusters
-- 📊 **Resource Insights**: Comprehensive monitoring and interactive topology views
-- 🤖 **AI Assistant**: LLM-powered analysis and expert-level diagnostics
+- 🎨 **Modern UI/UX**: Clean and intuitive interface with smooth transitions
+- 📱 **Responsive Design**: Optimized for all devices from mobile to desktop
+- ⚡ **Performance**: Fast loading with optimized assets and code splitting
 
 ### Development
 
