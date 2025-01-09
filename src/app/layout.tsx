@@ -1,14 +1,10 @@
 import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
+import { usePageTracking } from '@/hooks/usePageTracking'
 
 const inter = Inter({ subsets: ['latin'] })
-
-export const viewport: Viewport = {
-  width: 'device-width',
-  initialScale: 1,
-  themeColor: '#000000',
-}
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://karpor.kusionstack.io'),
@@ -16,67 +12,58 @@ export const metadata: Metadata = {
   description: 'Advanced Search and Insight capabilities for your Kubernetes clusters across any clouds. Powered by LLM, providing real-time insights and expert-level solutions.',
   keywords: [
     'Kubernetes',
-    'Intelligence',
+    'K8s',
+    'Resource Explorer',
     'Search',
+    'Insight',
     'AI',
-    'LLM',
-    'Resource Insights',
-    'Compliance Monitoring',
-    'Resource Visualization',
-    'AI Assistant',
     'Cloud Native',
-    'Multi Cluster',
-    'Real-time Synchronization',
-    'Smart Queries'
   ],
-  authors: [{ name: 'The Karpor Authors' }],
-  creator: 'KusionStack',
-  publisher: 'KusionStack',
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
-  },
+  authors: [{ name: 'KusionStack' }],
   icons: {
     icon: [
-      { url: '/favicon.ico', type: 'image/x-icon' },
-      { url: '/logo192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/logo512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon.ico' },  // 基础 favicon
+      { url: '/logo192.png', sizes: '192x192', type: 'image/png' },  // PWA 图标
+      { url: '/logo512.png', sizes: '512x512', type: 'image/png' },  // PWA 大图标
     ],
     apple: [
-      { url: '/logo192.png' },
+      { url: '/logo192.png' },  // 暂时用 logo192 作为 iOS 图标
     ],
   },
-  manifest: '/manifest.json',
+  manifest: '/manifest.json',  // PWA manifest 文件
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://karpor.kusionstack.io/',
     title: 'Karpor - Intelligence for Kubernetes',
-    description: 'Advanced Search and Insight capabilities for your Kubernetes clusters across any clouds. Powered by LLM, providing real-time insights and expert-level solutions.',
+    description:
+      'Advanced Search and Insight capabilities for your Kubernetes clusters across any clouds. Powered by LLM, providing real-time insights and expert-level solutions.',
+    url: 'https://karpor.kusionstack.io',
     siteName: 'Karpor',
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
         url: '/logo512.png',
         width: 512,
         height: 512,
-        alt: 'Karpor Logo',
-      },
-    ],
+        alt: 'Karpor Logo'
+      }
+    ]
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Karpor - Intelligence for Kubernetes',
-    description: 'Advanced Search and Insight capabilities for your Kubernetes clusters across any clouds. Powered by LLM, providing real-time insights and expert-level solutions.',
-    images: ['/logo512.png'],
+    description:
+      'Advanced Search and Insight capabilities for your Kubernetes clusters across any clouds. Powered by LLM, providing real-time insights and expert-level solutions.',
+    creator: '@KusionStack',
+    images: ['/logo512.png']
   },
-  other: {
-    'msapplication-TileColor': '#000000',
-    'msapplication-config': '/browserconfig.xml',
-  },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: '#000000',
 }
 
 export default function RootLayout({
@@ -84,12 +71,18 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  // 使用 hook 追踪页面访问
+  usePageTracking();
+
   return (
     <html lang="en">
       <head>
         <link rel="license" href="http://www.apache.org/licenses/LICENSE-2.0" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <GoogleAnalytics />
+        {children}
+      </body>
     </html>
   )
 }
