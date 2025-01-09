@@ -63,6 +63,36 @@ Vercel 生产环境部署配置：
 3. 添加 `NEXT_PUBLIC_GA_ID` 并填入你的 GA 测量 ID
 4. 选择需要应用的环境（生产/预览/开发）
 
+### Google Analytics 事件追踪
+
+以下是在 Google Analytics 中追踪的事件：
+
+### 导航事件
+- 类别: `Navigation`
+  - Logo 点击 (`label: 'Logo'`)
+  - 导航链接点击 (`label: [链接名称]`)
+  - 开始使用按钮点击 (`label: 'Get Started'`)
+
+### Hero 区域事件
+- 类别: `Hero`
+  - GitHub 按钮点击 (`label: 'GitHub Button'`)
+  - 在线演示按钮点击 (`label: 'Live Demo Button'`)
+
+### CTA 区域事件
+- 类别: `CTA`
+  - 复制命令点击 (`label: 'Copy Command'`)
+  - 高级安装链接点击 (`label: 'Advanced Installation'`)
+
+所有事件包含以下属性：
+- `action: 'click'`
+- `category: ['Navigation', 'Hero', 'CTA']`
+- `label: [具体按钮/链接名称]`
+- `value: 1`
+
+你可以在 Google Analytics 的以下位置查看这些事件：
+- 行为 > 事件 > 概览
+- 行为 > 事件 > 主要事件
+
 ### 技术栈
 
 - Next.js 14

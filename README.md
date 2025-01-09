@@ -63,6 +63,36 @@ For production deployment on Vercel:
 3. Add `NEXT_PUBLIC_GA_ID` with your GA Measurement ID
 4. Select the environments where it should be available (Production/Preview/Development)
 
+### Google Analytics Events
+
+The following events are tracked in Google Analytics:
+
+### Navigation Events
+- Category: `Navigation`
+  - Logo Click (`label: 'Logo'`)
+  - Navigation Links Click (`label: [link name]`)
+  - Get Started Button Click (`label: 'Get Started'`)
+
+### Hero Section Events
+- Category: `Hero`
+  - GitHub Button Click (`label: 'GitHub Button'`)
+  - Live Demo Button Click (`label: 'Live Demo Button'`)
+
+### CTA Section Events
+- Category: `CTA`
+  - Copy Command Click (`label: 'Copy Command'`)
+  - Advanced Installation Link Click (`label: 'Advanced Installation'`)
+
+All events include:
+- `action: 'click'`
+- `category: ['Navigation', 'Hero', 'CTA']`
+- `label: [specific button/link name]`
+- `value: 1`
+
+You can view these events in Google Analytics under:
+- Behavior > Events > Overview
+- Behavior > Events > Top Events
+
 ### Tech Stack
 
 - Next.js 14
