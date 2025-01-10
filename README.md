@@ -77,6 +77,7 @@ The following events are tracked in Google Analytics:
 - Category: `Hero`
   - GitHub Button Click (`label: 'GitHub Button'`)
   - Live Demo Button Click (`label: 'Live Demo Button'`)
+  - Product Hunt Button Click (`label: 'Product Hunt Button'`)
 
 ### CTA Section Events
 - Category: `CTA`
@@ -100,6 +101,11 @@ You can view these events in Google Analytics under:
 - Tailwind CSS
 - TypeScript
 - Google Analytics 4
+
+### Community
+
+- ⭐ Star us on [GitHub](https://github.com/KusionStack/karpor)
+- 🏆 Support us on [Product Hunt](https://www.producthunt.com/posts/karpor)
 
 ### License
 
