@@ -3,4 +3,4 @@ rules:
   - base: main
     upstream: KusionStack:main # change `wei` to the owner of upstream repo
     mergeMethod: hardreset
-    mergeUnstable: false
+    mergeUnstable: true
