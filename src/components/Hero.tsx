@@ -76,8 +76,8 @@ export default function Hero() {
                 href="https://github.com/KusionStack/karpor"
               />
               <HeroButton
-                type="demo"
-                href="https://karpor-demo.kusionstack.io"
+                type="producthunt"
+                href="https://www.producthunt.com/posts/karpor"
               />
             </div>
 
