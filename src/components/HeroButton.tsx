@@ -4,11 +4,12 @@ import { useState, useEffect } from 'react';
 import * as gtag from '@/lib/gtag';
 
 interface HeroButtonProps {
-  type: 'github' | 'demo';
+  type: 'github' | 'demo' | 'producthunt';
   href: string;
+  size?: 'normal' | 'small';
 }
 
-export default function HeroButton({ type, href }: HeroButtonProps) {
+export default function HeroButton({ type, href, size = 'normal' }: HeroButtonProps) {
   const [stars, setStars] = useState<number | null>(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -45,18 +46,26 @@ export default function HeroButton({ type, href }: HeroButtonProps) {
   }, [isHovered]);
 
   const buttonClasses = `
-    group relative inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 
-    rounded-lg sm:rounded-xl text-sm sm:text-base font-medium 
+    group relative inline-flex items-center gap-2 
+    ${size === 'small' 
+      ? 'px-3 py-2 text-sm rounded-lg' 
+      : type === 'producthunt'
+        ? 'p-0 rounded-xl'
+        : 'px-6 sm:px-6 py-3 sm:py-3 rounded-xl text-base w-[200px] sm:w-[200px] justify-center'
+    }
+    font-medium 
     transition-all duration-300 ease-out
     ${type === 'github' 
-      ? 'bg-[#1B1F23] hover:bg-[#2B3137] text-white overflow-hidden' 
-      : 'bg-blue-600 hover:bg-blue-700 text-white'
+      ? 'bg-[#1B1F23] hover:bg-[#2B3137] text-white overflow-hidden shadow-md hover:shadow-lg' 
+      : type === 'demo'
+      ? 'bg-blue-600 hover:bg-blue-700 text-white shadow-md hover:shadow-lg'
+      : 'overflow-hidden'
     }
-    ${isHovered ? 'scale-[1.02] shadow-lg' : 'shadow-md'}
+    ${type !== 'producthunt' && isHovered ? 'scale-[1.02]' : ''}
   `;
 
   const githubIconClasses = `
-    w-5 h-5 sm:w-6 sm:h-6 
+    ${size === 'small' ? 'w-4 h-4' : 'w-6 h-6'}
     transition-transform duration-300
     ${isHovered ? 'rotate-12 scale-110' : ''}
   `;
@@ -79,7 +88,7 @@ export default function HeroButton({ type, href }: HeroButtonProps) {
   `;
 
   const demoIconClasses = `
-    w-5 h-5 sm:w-6 sm:h-6
+    ${size === 'small' ? 'w-4 h-4' : 'w-6 h-6'}
     transition-all duration-300
     ${isHovered ? 'translate-x-1 scale-110' : ''}
   `;
@@ -96,7 +105,7 @@ export default function HeroButton({ type, href }: HeroButtonProps) {
         gtag.event({
           action: 'click',
           category: 'Hero',
-          label: `${type === 'github' ? 'GitHub' : 'Live Demo'} Button`,
+          label: `${type === 'github' ? 'GitHub' : type === 'demo' ? 'Live Demo' : 'Product Hunt'} Button`,
           value: 1
         });
       }}
@@ -129,7 +138,7 @@ export default function HeroButton({ type, href }: HeroButtonProps) {
             `}
           />
         </>
-      ) : (
+      ) : type === 'demo' ? (
         <>
           <svg className={demoIconClasses} fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
@@ -142,6 +151,30 @@ export default function HeroButton({ type, href }: HeroButtonProps) {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
           </span>
         </>
+      ) : (
+        <div 
+          className={`
+            relative transition-transform duration-300 h-[44px] sm:h-[48px]
+            ${isHovered ? 'scale-[1.02]' : ''}
+          `}
+        >
+          <img
+            src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=770525&theme=light&t=1736447376990"
+            alt="Karpor - Effortlessly manage Kubernetes with AI-powered insights | Product Hunt"
+            width={size === 'small' ? 160 : 200}
+            height={48}
+            className="transition-all duration-300 h-full w-auto"
+          />
+          {/* Shine effect */}
+          <div 
+            className={`
+              absolute inset-0 pointer-events-none
+              bg-gradient-to-r from-transparent via-white/20 to-transparent
+              transition-transform duration-1000 ease-in-out
+              ${isHovered ? 'translate-x-full' : '-translate-x-full'}
+            `}
+          />
+        </div>
       )}
     </a>
   );
