@@ -82,17 +82,17 @@ export default function Hero() {
             </div>
 
             {/* Video Container */}
-            <div className="mt-4 sm:mt-8 rounded-lg sm:rounded-2xl overflow-hidden border border-white/10 shadow-2xl mx-auto max-w-[90vw] sm:max-w-none">
+            <div className="mt-4 sm:mt-8 rounded-lg sm:rounded-2xl overflow-hidden border border-white/10 shadow-2xl mx-auto max-w-[90vw] sm:max-w-5xl">
               <div className="relative rounded-lg sm:rounded-2xl overflow-hidden">
                 <video
                   ref={videoRef}
-                  className="w-full aspect-video object-cover rounded-lg sm:rounded-2xl"
+                  className="max-w-full h-auto rounded-lg sm:rounded-2xl"
                   autoPlay
                   muted
                   loop
                   playsInline
                 >
-                  <source src="https://kusionstack.io/karpor/assets/overview/demo.mp4" type="video/mp4" />
+                  <source src="/assets/hero.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>
