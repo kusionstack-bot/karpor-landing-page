@@ -69,8 +69,8 @@ export default function ProductHuntPromo() {
 
   return (
     <section className="relative py-16">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex flex-col items-center gap-12">
+      <div className="container mx-auto px-4 sm:px-4">
+        <div className="flex flex-col items-center gap-4 sm:gap-8">
           {/* Vote text */}
           <div className="text-center mb-4">
             <RoughNotationGroup show>
@@ -83,11 +83,11 @@ export default function ProductHuntPromo() {
                   padding={[12, 24]}
                   animationDuration={1500}
                 >
-                  <h2 className="text-4xl font-bold text-white">Vote for us!</h2>
+                  <h2 className="text-3xl sm:text-1xl font-bold text-white">Vote for us!</h2>
                 </RoughNotation>
               </div>
               <div className="mt-2">
-                <p className="text-xl text-gray-300">Join us on Product Hunt and show your support</p>
+                <p className="text-lg sm:text-xl text-gray-300">Join us on Product Hunt and show your support</p>
               </div>
             </RoughNotationGroup>
           </div>
@@ -95,7 +95,7 @@ export default function ProductHuntPromo() {
           {/* Product Hunt Button with Arrows */}
           <div className="relative">
             {/* Left Arrow */}
-            <div className="absolute -left-44 top-1/2 -translate-y-1/2">
+            <div className="absolute -left-44 top-1/2 -translate-y-1/2 hidden sm:block">
               <HandDrawnArrow direction="left" />
             </div>
 
@@ -133,7 +133,7 @@ export default function ProductHuntPromo() {
             </div>
 
             {/* Right Arrow */}
-            <div className="absolute -right-44 top-1/2 -translate-y-1/2">
+            <div className="absolute -right-44 top-1/2 -translate-y-1/2 hidden sm:block">
               <HandDrawnArrow direction="right" />
             </div>
           </div>
@@ -148,7 +148,7 @@ export default function ProductHuntPromo() {
               padding={[0, 0]}
               animationDuration={1500}
             >
-              <span className="text-blue-100 font-handwriting text-3xl tracking-wide">
+              <span className="text-xl sm:text-2xl text-blue-100 font-handwriting tracking-wide">
                 On Product Hunt!
               </span>
             </RoughNotation>
@@ -193,6 +193,29 @@ export default function ProductHuntPromo() {
         .animate-float-delay {
           animation: float 3s ease-in-out infinite;
           animation-delay: 1.5s;
+        }
+        @media (max-width: 640px) {
+          /* Vote text */
+          .text-center.mb-4 h2 {
+            font-size: 1.5rem;
+          }
+          .text-center.mb-4 p {
+            font-size: 1rem;
+          }
+          /* Product Hunt Button with Arrows */
+          .relative {
+            max-width: none;
+          }
+          .absolute.-left-44 {
+            left: -2.5rem;
+          }
+          .absolute.-right-44 {
+            right: -2.5rem;
+          }
+          /* Product Hunt text */
+          .text-center.mt-4 span {
+            font-size: 1.25rem;
+          }
         }
       `}</style>
     </section>
