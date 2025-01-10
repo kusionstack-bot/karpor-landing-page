@@ -2,5 +2,3 @@ version: "1"
 rules:
   - base: main
     upstream: KusionStack:main # change `wei` to the owner of upstream repo
-    mergeMethod: merge
-    mergeUnstable: true
