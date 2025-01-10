@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
+import ProductHuntPromo from '@/components/ProductHuntPromo';
 import Features from '@/components/Features';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
@@ -27,6 +28,7 @@ export default function Home() {
         <div className="relative z-10">
           <Navbar />
           <Hero />
+          <ProductHuntPromo />
           <Features />
           <CTA />
         </div>
