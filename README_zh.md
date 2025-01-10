@@ -77,6 +77,7 @@ Vercel 生产环境部署配置：
 - 类别: `Hero`
   - GitHub 按钮点击 (`label: 'GitHub Button'`)
   - 在线演示按钮点击 (`label: 'Live Demo Button'`)
+  - Product Hunt 按钮点击 (`label: 'Product Hunt Button'`)
 
 ### CTA 区域事件
 - 类别: `CTA`
@@ -100,6 +101,11 @@ Vercel 生产环境部署配置：
 - Tailwind CSS
 - TypeScript
 - Google Analytics 4
+
+### 社区
+
+- ⭐ 在 [GitHub](https://github.com/KusionStack/karpor) 上为我们点星
+- 🏆 在 [Product Hunt](https://www.producthunt.com/posts/karpor) 上支持我们
 
 ### 许可证
 
