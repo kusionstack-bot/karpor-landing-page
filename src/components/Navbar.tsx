@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import * as gtag from '@/lib/gtag';
+import HeroButton from './HeroButton';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,6 +21,7 @@ export default function Navbar() {
   const navItems = [
     { name: 'Features', href: '#features' },
     { name: 'Documentation', href: 'https://www.kusionstack.io/karpor' },
+    { name: 'Get Started', href: 'https://www.kusionstack.io/karpor/getting-started/quick-start' },
   ];
 
   return (
@@ -34,9 +36,9 @@ export default function Navbar() {
           <div className="flex items-center gap-2.5">
             <a href="/" className="flex items-center gap-2.5" onClick={() => {
               gtag.event({
-                action: 'click',
-                category: 'Navigation',
-                label: 'Logo',
+                action: 'nav_logo_click',
+                category: 'navigation',
+                label: 'home',
                 value: 1
               });
             }}>
@@ -71,9 +73,9 @@ export default function Navbar() {
                 className="text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium hover:bg-white/5 rounded-lg"
                 onClick={() => {
                   gtag.event({
-                    action: 'click',
-                    category: 'Navigation',
-                    label: item.name,
+                    action: 'nav_link_click',
+                    category: 'navigation',
+                    label: item.name.toLowerCase(),
                     value: 1
                   });
                 }}
@@ -81,23 +83,8 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end">
-              <a
-                href="https://www.kusionstack.io/karpor/getting-started/quick-start"
-                className="inline-block rounded-lg px-4 py-1.5 text-sm font-semibold leading-6 bg-blue-600 text-white shadow-sm ring-1 ring-blue-500/50 hover:bg-blue-700 hover:ring-blue-600/50"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => {
-                  gtag.event({
-                    action: 'click',
-                    category: 'Navigation',
-                    label: 'Get Started',
-                    value: 1
-                  });
-                }}
-              >
-                Get started
-              </a>
+            <div className="hidden lg:flex lg:min-w-0 lg:flex-1 lg:justify-end space-x-4">
+              <HeroButton type="demo" href="https://karpor-demo.kusionstack.io" size="small" />
             </div>
           </div>
 
@@ -132,9 +119,9 @@ export default function Navbar() {
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
               onClick={() => {
                 gtag.event({
-                  action: 'click',
-                  category: 'Navigation',
-                  label: item.name,
+                  action: 'nav_link_click',
+                  category: 'navigation',
+                  label: item.name.toLowerCase(),
                   value: 1
                 });
               }}
@@ -143,22 +130,9 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="pt-4 pb-3 border-t border-gray-700">
-            <a
-              href="https://www.kusionstack.io/karpor/getting-started/quick-start"
-              className="mt-2 block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-blue-500 hover:bg-blue-600"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => {
-                gtag.event({
-                  action: 'click',
-                  category: 'Navigation',
-                  label: 'Get Started',
-                  value: 1
-                });
-              }}
-            >
-              Get Started
-            </a>
+            <div className="mt-2">
+              <HeroButton type="demo" href="https://karpor-demo.kusionstack.io" size="small" />
+            </div>
           </div>
         </div>
       </div>

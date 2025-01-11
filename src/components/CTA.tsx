@@ -49,9 +49,9 @@ export default function CTA() {
                 onClick={() => {
                   handleCopy();
                   gtag.event({
-                    action: 'click',
-                    category: 'CTA',
-                    label: 'Copy Command',
+                    action: 'copy_install_command',
+                    category: 'installation',
+                    label: 'helm_command',
                     value: 1
                   });
                 }}
@@ -92,9 +92,9 @@ export default function CTA() {
               className="text-blue-400 hover:text-blue-300 text-base lg:text-lg inline-flex items-center gap-2 transition-colors group font-medium"
               onClick={() => {
                 gtag.event({
-                  action: 'click',
-                  category: 'CTA',
-                  label: 'Advanced Installation',
+                  action: 'view_advanced_installation',
+                  category: 'installation',
+                  label: 'documentation',
                   value: 1
                 });
               }}

@@ -20,10 +20,14 @@ export const event = ({ action, category, label, value }: {
 }) => {
   if (typeof window.gtag !== 'undefined') {
     // TypeScript will check parameter types
+    // GA4 format
     window.gtag('event', action, {
-      event_category: category,
-      event_label: label,
-      value: value,
+      // Custom parameters
+      category,
+      label,
+      value,
+      interaction_type: category,
+      item_name: label,
     });
   }
 };

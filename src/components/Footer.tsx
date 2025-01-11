@@ -68,7 +68,7 @@ export default function Footer() {
         </div>
         <div className="border-t border-blue-900 pt-8">
           <p className="text-center text-blue-200/50">
-            &copy; {new Date().getFullYear()} Karpor. All rights reserved.
+            Copyright © 2024-2025 KusionStack Authors. The Linux Foundation has registered trademarks and uses trademarks. For a list of trademarks of The Linux Foundation, please see our <a href="https://www.linuxfoundation.org/trademark-usage/" className="text-blue-200/70 hover:text-white transition-all hover:translate-x-1">Trademark Usage</a> page.
           </p>
         </div>
       </div>

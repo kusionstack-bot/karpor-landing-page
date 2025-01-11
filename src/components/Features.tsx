@@ -3,7 +3,7 @@
 import { useEffect, useLayoutEffect, useRef } from 'react';
 import FeatureCard from './FeatureCard';
 
-// 为了避免 SSR 警告，创建一个安全的 useLayoutEffect
+// Create a safe useLayoutEffect to avoid SSR warnings
 const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? useLayoutEffect : useEffect;
 
 const featuresData = [
@@ -71,7 +71,7 @@ export default function Features() {
   const featuresRef = useRef<HTMLDivElement>(null);
 
   useIsomorphicLayoutEffect(() => {
-    // 设置初始状态
+    // Set initial state
     if (featuresRef.current) {
       const title = featuresRef.current.querySelector('.feature-title');
       const features = featuresRef.current.querySelectorAll('.feature-card');
@@ -97,7 +97,7 @@ export default function Features() {
         
         gsap.registerPlugin(ScrollTrigger);
 
-        // 标题动画
+        // Title animation
         const title = document.querySelector('.feature-title');
         if (title) {
           gsap.to(title, {
@@ -113,7 +113,7 @@ export default function Features() {
           });
         }
 
-        // 特性卡片动画
+        // Feature card animation
         const features = document.querySelectorAll('.feature-card');
         features.forEach((feature, index) => {
           gsap.to(feature, {
