@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://karpor.kusionstack.io'),
   title: 'Karpor - Intelligence for Kubernetes',
-  description: 'Advanced Search and Insight capabilities for your Kubernetes clusters across any clouds. Powered by LLM, providing real-time insights and expert-level solutions.',
+  description: 'Advanced Search and Insight capabilities for your Kubernetes clusters across any clouds. Powered by LLM, providing real-time insights and expert-level solutions',
   keywords: [
     'Kubernetes',
     'K8s',
@@ -30,10 +30,13 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/manifest.json',  // PWA manifest file
+  alternates: {
+    canonical: 'https://karpor.kusionstack.io',
+  },
   openGraph: {
     title: 'Karpor - Intelligence for Kubernetes',
     description:
-      'Advanced Search and Insight capabilities for your Kubernetes clusters across any clouds. Powered by LLM, providing real-time insights and expert-level solutions.',
+      'Advanced Search and Insight capabilities for your Kubernetes clusters across any clouds. Powered by LLM, providing real-time insights and expert-level solutions',
     url: 'https://karpor.kusionstack.io',
     siteName: 'Karpor',
     locale: 'en_US',
@@ -51,9 +54,20 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Karpor - Intelligence for Kubernetes',
     description:
-      'Advanced Search and Insight capabilities for your Kubernetes clusters across any clouds. Powered by LLM, providing real-time insights and expert-level solutions.',
+      'Advanced Search and Insight capabilities for your Kubernetes clusters across any clouds. Powered by LLM, providing real-time insights and expert-level solutions',
     creator: '@KusionStack',
     images: ['/logo512.png']
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
 }
 
