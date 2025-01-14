@@ -30,6 +30,9 @@ export const metadata: Metadata = {
     ],
   },
   manifest: '/manifest.json',  // PWA manifest file
+  alternates: {
+    canonical: 'https://karpor.kusionstack.io',
+  },
   openGraph: {
     title: 'Karpor - Intelligence for Kubernetes',
     description:
