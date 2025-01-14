@@ -58,6 +58,17 @@ export const metadata: Metadata = {
     creator: '@KusionStack',
     images: ['/logo512.png']
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export const viewport: Viewport = {
