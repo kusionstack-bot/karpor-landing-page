@@ -49,10 +49,11 @@ export default function CTA() {
                 onClick={() => {
                   handleCopy();
                   gtag.event({
-                    action: 'copy_install_command',
-                    category: 'installation',
-                    label: 'helm_command',
-                    value: 1
+                    name: 'install_command_copy_click',
+                    params: {
+                      section: 'installation',
+                      value: 1
+                    }
                   });
                 }}
                 className="text-blue-400 hover:text-blue-300 text-base lg:text-lg flex items-center gap-2 transition-colors group"
@@ -92,10 +93,11 @@ export default function CTA() {
               className="text-blue-400 hover:text-blue-300 text-base lg:text-lg inline-flex items-center gap-2 transition-colors group font-medium"
               onClick={() => {
                 gtag.event({
-                  action: 'view_advanced_installation',
-                  category: 'installation',
-                  label: 'documentation',
-                  value: 1
+                  name: 'advanced_installation_doc_click',
+                  params: {
+                    section: 'installation',
+                    value: 1
+                  }
                 });
               }}
             >

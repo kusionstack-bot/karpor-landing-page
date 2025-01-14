@@ -36,10 +36,11 @@ export default function Navbar() {
           <div className="flex items-center gap-2.5">
             <a href="/" className="flex items-center gap-2.5" onClick={() => {
               gtag.event({
-                action: 'nav_logo_click',
-                category: 'navigation',
-                label: 'home',
-                value: 1
+                name: 'nav_logo_click',
+                params: {
+                  section: 'navbar',
+                  value: 1
+                }
               });
             }}>
               <div className="relative w-9 h-9 group flex items-center justify-center">
@@ -73,10 +74,12 @@ export default function Navbar() {
                 className="text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium hover:bg-white/5 rounded-lg"
                 onClick={() => {
                   gtag.event({
-                    action: 'nav_link_click',
-                    category: 'navigation',
-                    label: item.name.toLowerCase(),
-                    value: 1
+                    name: `nav_${item.name.toLowerCase()}_click`,
+                    params: {
+                      section: 'navbar',
+                      device_type: 'desktop',
+                      value: 1
+                    }
                   });
                 }}
               >
@@ -119,10 +122,12 @@ export default function Navbar() {
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
               onClick={() => {
                 gtag.event({
-                  action: 'nav_link_click',
-                  category: 'navigation',
-                  label: item.name.toLowerCase(),
-                  value: 1
+                  name: `nav_${item.name.toLowerCase()}_click`,
+                  params: {
+                    section: 'navbar',
+                    device_type: 'mobile',
+                    value: 1
+                  }
                 });
               }}
             >
