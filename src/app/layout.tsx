@@ -11,12 +11,13 @@ export const metadata: Metadata = {
   description: 'Advanced Search and Insight capabilities for your Kubernetes clusters across any clouds. Powered by LLM, providing real-time insights and expert-level solutions',
   keywords: [
     'Kubernetes',
-    'K8s',
-    'Resource Explorer',
     'Search',
-    'Insight',
     'AI',
+    'K8s',
+    'Kubernetes Explorer',
+    'Kubernetes Dashboard',
     'Cloud Native',
+    'Multi Cluster',
   ],
   authors: [{ name: 'KusionStack' }],
   icons: {
