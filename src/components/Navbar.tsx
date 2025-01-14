@@ -74,7 +74,7 @@ export default function Navbar() {
                 className="text-gray-300 hover:text-white transition-colors px-3 py-2 text-sm font-medium hover:bg-white/5 rounded-lg"
                 onClick={() => {
                   gtag.event({
-                    name: `nav_${item.name.toLowerCase()}_click`,
+                    name: `nav_${item.name.toLowerCase().replace(/\s+/g, '_')}_click`,
                     params: {
                       section: 'navbar',
                       device_type: 'desktop',
@@ -122,7 +122,7 @@ export default function Navbar() {
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700"
               onClick={() => {
                 gtag.event({
-                  name: `nav_${item.name.toLowerCase()}_click`,
+                  name: `nav_${item.name.toLowerCase().replace(/\s+/g, '_')}_click`,
                   params: {
                     section: 'navbar',
                     device_type: 'mobile',

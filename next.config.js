@@ -21,13 +21,7 @@ const nextConfig = {
           },
         ],
       },
-    ]
-  },
-  // Enable sitemap generation
-  experimental: {
-    sitemap: {
-      enabled: true,
-    },
+    ];
   },
 }
 
