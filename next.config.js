@@ -23,6 +23,12 @@ const nextConfig = {
       },
     ]
   },
+  // Enable sitemap generation
+  experimental: {
+    sitemap: {
+      enabled: true,
+    },
+  },
 }
 
 module.exports = nextConfig
