@@ -103,10 +103,11 @@ export default function HeroButton({ type, href, size = 'normal' }: HeroButtonPr
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => {
         gtag.event({
-          action: 'click',
-          category: 'Hero',
-          label: `${type === 'github' ? 'GitHub' : type === 'demo' ? 'Live Demo' : 'Product Hunt'} Button`,
-          value: 1
+          name: `${type}_button_click`,
+          params: {
+            section: 'hero',
+            value: 1
+          }
         });
       }}
     >

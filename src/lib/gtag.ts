@@ -11,23 +11,20 @@ export const pageview = (url: string) => {
   }
 };
 
-// https://developers.google.com/analytics/devguides/collection/gtagjs/events
-export const event = ({ action, category, label, value }: {
-  action: string;
-  category: string;
-  label: string;
-  value?: number;
+// https://developers.google.com/analytics/devguides/collection/ga4/events?client_type=gtag
+export const event = ({ 
+  name,
+  params = {}
+}: {
+  name: string;
+  params?: Record<string, any>;
 }) => {
   if (typeof window.gtag !== 'undefined') {
-    // TypeScript will check parameter types
-    // GA4 format
-    window.gtag('event', action, {
-      // Custom parameters
-      category,
-      label,
-      value,
-      interaction_type: category,
-      item_name: label,
+    window.gtag('event', name, {
+      ...params,
+      // Additional recommended GA4 parameters
+      page_location: window.location.href,
+      page_title: document.title
     });
   }
 };
