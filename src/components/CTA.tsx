@@ -87,7 +87,7 @@ export default function CTA() {
 
           <div className="mt-6 flex items-center justify-center gap-x-6">
             <a
-              href="https://www.kusionstack.io/karpor/next/getting-started/installation"
+              href="https://www.kusionstack.io/karpor/getting-started/installation"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 text-base lg:text-lg inline-flex items-center gap-2 transition-colors group font-medium"

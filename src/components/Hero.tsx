@@ -33,7 +33,7 @@ export default function Hero() {
             {/* Version Update Banner */}
             <div className="mb-8 sm:mb-10">
               <a
-                href="https://github.com/KusionStack/karpor/releases/tag/v0.5.9"
+                href="https://github.com/KusionStack/karpor/releases/tag/v0.6.0"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-blue-500/15 via-purple-500/15 to-blue-500/15 text-white/90 border border-blue-400/20 hover:border-blue-400/40 transition-colors"
