@@ -58,10 +58,10 @@ const featuresData = [
       }
     ],
     image: {
-      src: "/assets/ai.gif",
+      src: "/assets/ai.mp4",
       alt: "AI Assistant Feature",
-      type: "image/gif" as const,
-      placeholderSrc: "https://kusionstack.io/karpor/assets/insight/insight-home-raw.jpg"
+      type: "video/mp4" as const,
+      placeholderSrc: "https://kusionstack.io/karpor/assets/ai/event-ai-diagnosis.png"
     }
   }
 ];
